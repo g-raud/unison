@@ -1928,6 +1928,14 @@ last match of the separator string on the line is used as a delimiter.  Thus
 to allow a path specification to contain the separator string, append an
 associated string to it, even if it is not used.  The associated string cannot
 contain the separator string.
+
+A negative pattern does not remove the string associated with a path, so that
+this string need not be given again when reenabling a path.  For example:
+\begin{verbatim}
+        preferpartial = Name *.txt -> /local/path
+        preferpartial = del Path prefix*.txt
+        preferpartial = Path prefix.txt
+\end{verbatim}
 \end{itemize}
 
 Some examples of path patterns appear in \sectionref{ignore}{Ignoring Paths}.
